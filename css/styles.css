@@ -57,6 +57,11 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 z-index: 100;
+transition: .3s;
+}
+
+.header.sticky {
+ background: var(--second-bg-color);
 }
 
 /**
