@@ -68,6 +68,7 @@ transition: .3s;
 * LOGO SECTION
 **/
 .logo {
+ position: relative;
  font-size: 2.5rem;
  color: var(--text-color);
  font-weight: 600;
@@ -76,6 +77,9 @@ transition: .3s;
 /**
 * NAVBAR SECTION
 **/
+.navbar {
+ position: relative;
+}
 .navbar a {
  font-size: 1.5rem;
  color: var(--text-color);
@@ -88,6 +92,7 @@ transition: .3s;
  color: var(--main-color);
 }
 #menu-icon {
+ position: relative;
  font-size: 3.6rem;
  color: var(--text-color);
  cursor: pointer;
@@ -309,6 +314,7 @@ span {
  border-bottom: .2rem solid var(--second-bg-color);
  border-left: .2rem solid var(--main-color);
  border-right: .2rem solid var(--main-color);
+ animation: aboutSpinner 8s linear infinite;
 }
 .about-content {
  text-align: center;
@@ -618,6 +624,25 @@ span {
 }
 
 /**
+* ANIMATIONS RELOAD AND SCROLL
+**/
+.animate {
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 100%;
+ height: 100%;
+ background: yellowgreen;
+ z-index: 98;
+}
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate {
+ animation: showRight 1s ease forwards;
+ animation-delay: calc(.3s * var(--i));
+}
+
+/**
 * BREAKPOINTS
 **/
 
@@ -783,5 +808,17 @@ span {
  75%,
  81% {
   opacity: 0;
+ }
+}
+
+@keyframes aboutSpinner {
+ 100% {
+  transform: translate(-50%, -50%) rotate(360deg);
+ }
+}
+
+@keyframes showRight {
+ 100% {
+  width: 0;
  }
 }
